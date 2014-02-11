@@ -28,7 +28,7 @@ QMAKE_LFLAGS    += -std=c++11
 QT     -=  gui core
 LIBS   -= -lQtGui -lQtCore
 
-LIBS        += -L$${LOCAL}/lib -L/usr/local/lib -ldl -lpthread -lz -lboost_thread-mt -lboost_system-mt
+LIBS        += -ldl -lpthread -lz -lboost_thread -lboost_system
 INCLUDEPATH += . /usr/local/include
 
 EXAMPLE1 = \

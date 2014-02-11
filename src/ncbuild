@@ -44,7 +44,7 @@ filename        =  ("nc_" + dimension_names + "_" + variable_types).replace(',',
 print "Building " + filename + " and copying it to folder " + nanocube_bin + "..."
 
 # headers = "Common.hh ContentHolder.hh DumpFile.hh FlatTree.hh MemoryUtil.hh MercatorProjection.hh NanoCube.hh NanoCubeInsert.hh NanoCubeQuery.hh NanoCubeQueryException.hh NanoCubeQueryResult.hh NanoCubeReportBuilder.hh NanoCubeSchema.hh NanoCubeTimeQuery.hh QuadTree.hh QuadTreeNode.hh QuadTreeUtil.hh Query.hh QueryParser.hh QueryResult.hh Report.hh Server.hh Stopwatch.hh TaggedPointer.hh TimeBinFunction.hh TimeSeries.hh TimeSeriesEntryType.hh Tuple.hh Util.hh vector.hh small_vector.hh QuadTreeNode_autogen.hh mongoose.h FlatTreeN.hh NanoCubeSummary.hh"
-# 
+#
 # sources = "Common.cc DumpFile.cc MemoryUtil.cc MercatorProjection.cc NanoCubeQueryException.cc NanoCubeQueryResult.cc NanoCubeSchema.cc QuadTree.cc QuadTreeNode.cc Query.cc QueryParser.cc QueryResult.cc Report.cc Server.cc Stopwatch.cc TimeBinFunction.cc TimeSeries.cc Util.cc vector.cc mongoose.c nc.cc NanoCubeSummary.cc"
 
 sources = '''\
@@ -80,7 +80,7 @@ geom2d/make_monotone.cc	  \
 geom2d/planegraph.cc      \
 geom2d/point.cc		  \
 geom2d/polygon.cc         \
-geom2d/tile.cc ''' 
+geom2d/tile.cc '''
 
 compile_cmd = '''g++ -std=c++11 -O3 \
 -I. \
@@ -91,14 +91,14 @@ compile_cmd = '''g++ -std=c++11 -O3 \
 -o %s \
 %s \
 -lpthread \
--lz -ldl -lboost_thread-mt -lboost_system-mt''' % (dimension_names, variable_types, filename, sources)
+-lz -ldl -lboost_thread -lboost_system''' % (dimension_names, variable_types, filename, sources)
 
 # save compile command
 build_filename = "build"
 # file = open(build_filename, "w")
 # file.write(compile_cmd)
 # file.close()
-# 
+#
 # -L/usr/local/lib \
 # -ltcmalloc \
 # -fno-builtin-malloc -fno-builtin-calloc -fno-builtin-realloc -fno-builtin-free \
